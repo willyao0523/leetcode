@@ -1,5 +1,11 @@
 ## java lang&api cheetsheet
 
+### 拷贝ArrayList
+```java
+ArrayList<Integer> b = new ArrayList<>(a);
+ArrayList<Integer> b =(ArrayList<Integer>) a.clone();
+```
+
 ### Array
 ```java
 int data[] = new int[3];
@@ -118,6 +124,7 @@ Arrays.fill(int[] a, int val);
 Arrays.sort(int[] a);
 Arrays.binarySearch(int[] a, int key);
 Arrays.toString(int[] a);
+Arrays.sort(B, Comparator.comparingInt(Math::abs));
 Arrays.sort(books, (o1, o2) -> {
   if(o1.getPrice() > o2.getPrice()) {
     return 1;
@@ -136,3 +143,6 @@ Collecions.addAll(all, "hello", "world");
 Collections.reverse(all);
 Collections.copy(dest, src);
 ```
+
+### Tricks
+- 在常用char的情况下我们可以使用int[]来作为map而不需要创建HashMap
