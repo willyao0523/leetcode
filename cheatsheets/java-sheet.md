@@ -1,5 +1,31 @@
 ## java lang&api cheetsheet
 
+### Number
+```java
+Integer.MAX_VALUE
+Integer.MIN_VALUE
+Integer valueOf(int i)
+Integer valueOf(String s)
+Integer valueOf(String s, int radix)
+String toString()
+String toString(int i)
+int parseInt(String s)
+int parseInt(String s, int radix)
+```
+
+### Math
+```java
+Math.abs()
+Math.ceil(Double/Float)
+Math.floor(Double/Float)
+long round(double d)
+int round(float f)
+double exp(double d)
+double log(double d)
+double pow(double base, double exponent)
+Double E, PI
+```
+
 ### 拷贝ArrayList
 ```java
 ArrayList<Integer> b = new ArrayList<>(a);
@@ -50,6 +76,7 @@ String s = s.toUpperCase();
 String s = s.trim();
 int len = s.length();
 boolean b = s.isEmpty(); //验证是否为""而不是null
+boolean matches(String regex)
 ```
 
 ### List
@@ -64,6 +91,22 @@ l.clear(); //清空集合,根元素为null
 boolean b = l.isEmpty();
 String arr[] = l.toArray();
 l.add(0, tmp);//将tmp元素加入到列表的第0位
+List<List<Integer>> ans = new ArrayList<>();
+
+LinkedList<String> list = new LinkedList<>();
+list.add("hello");
+Iterator<String> iter = list.iterator();
+while(iter.hasNext())
+System.out.println(iter.next)
+```
+
+### Regex
+```java
+String pattern = "(.*(\\d+))";
+Pattern r = Pattern.compile(pattern);
+String line = "lalala";
+Matcher m = r.matches(line);
+if(m.find()) line = line.replaceAll("-","");
 ```
 
 ### Set
@@ -88,6 +131,8 @@ for(Map.Entry e: map.entrySet()) {
   Value v = e.getValue();
   Key k = e.getKey();
 }
+Map<String, String> map = new LinkedHashMap<String, String>(16,0.75f,true); // LinkedHashMap可以保证Map中保留插入元素的顺序
+
 ```
 
 
@@ -117,6 +162,52 @@ deque.offer(1);
 deque.offer(2);
 deque.offerFirst(3); // [3, 1, 2]
 deque.pollLast(); // [3, 1, 2]
+
+// 优先队列
+PriorityQueue<Integer> queue = new PriorityQueue<>(new Comparator<Integer>(){
+  @Override
+  public int compare(Integer o1, Integer o2) {
+    return o1.compareTo(o2);
+  }
+});
+queue.add(1);
+queue.poll();
+queue.peek();
+boolean queue.contains()
+queue.size()
+Object[] queue.toArray()
+Comparator<Employee> nameSorter = Comparator.comparing(Employee::getName);
+PriorityQueue<Employee> priorityQueue = new PriorityQueue<>( nameSorter );
+
+
+```
+
+### StringBuilder和StringBuffer
+```java
+StringBuilder ​append​(char c) 
+StringBuilder ​deleteCharAt​(int index) 
+int ​length​()
+Collections.​sort​(arrayList)
+```
+
+### Read with Scanner
+```java
+Scanner sc = new Scanner(System.in);
+while(sc.hasNextLine()) {}
+System.out.println(sc.nextLine());
+```
+
+### Read with BufferedReader
+```java
+String line = null;
+try {
+  BufferedReader br = new BufferedReader("filelocation");
+  while((line = br.readLine()) != null) {
+    System.out.println(line);
+  }
+} catch(Exception e) {
+  e.printStackTrace();
+}
 ```
 
 ### Arrays类
