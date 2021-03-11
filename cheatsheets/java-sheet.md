@@ -63,6 +63,7 @@ l.remove("1");
 l.clear(); //清空集合,根元素为null
 boolean b = l.isEmpty();
 String arr[] = l.toArray();
+l.add(0, tmp);//将tmp元素加入到列表的第0位
 ```
 
 ### Set
@@ -109,6 +110,7 @@ Queue<E> queue = new LinkedList<E>();
 queue.offer(1); //入队
 queue.peek();
 queue.poll(); //出队
+
 // 双向队列
 Deque<Integer> deque = new LinkedList<>();
 deque.offer(1);
