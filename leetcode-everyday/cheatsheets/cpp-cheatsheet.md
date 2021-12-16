@@ -28,6 +28,7 @@ for(int i = 0; i < m; i++) {
   map[s[i] - 'a'] = i;
 }
 
+accumulate(dp.begin(), dp.end(), 0);
 ```
 
 ### hashmap
