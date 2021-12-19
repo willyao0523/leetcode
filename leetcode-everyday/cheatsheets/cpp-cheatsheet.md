@@ -29,6 +29,13 @@ for(int i = 0; i < m; i++) {
 }
 
 accumulate(dp.begin(), dp.end(), 0);
+
+// vector<string> wordlist
+for(const string& word: wordlist)
+
+// 从dp中找到nums[i]从小到大排序该放入的位置，比如[2, 5]中我们放入4结果是1这个位置，*itr即把5替换掉
+auto itr = lower_bound(dp.begin(), dp.end(), nums[i]);                
+*itr = nums[i];
 ```
 
 ### hashmap
