@@ -9,9 +9,20 @@ nums.push_back(1);
 nums.pop_back();
 sort(nums.begin(), nums.end());
 
+auto it = find(v.begin(), v.end(), headB);
+if(it != v.end()) {
+  return headB;
+}
+
+nth_element(nums.begin(), nums.begin()+nums.size()/2, nums.end());
+
+count(nums.begin()+l, nums.begin()+r+1, ml)
+
 can_reach_a(m, vector<bool>(n, false)); 
 vector<int> chars(128, 0);
 swap(nums[i], nums[j]);
+
+reverse(s.begin() + index, s.begin() + i);
 
 vector<vector<int>> buckets(max_count + 1);
 for(const auto & p : counts) {
@@ -38,10 +49,19 @@ auto itr = lower_bound(dp.begin(), dp.end(), nums[i]);
 *itr = nums[i];
 ```
 
-### hashmap
+### map
 ```cpp
 unordered_map<int, int> counts;
 
+```
+
+
+
+### hashtable
+```cpp
+unordered_set<ListNode*> seen;
+seen.count(head)
+seen.insert(head);
 ```
 
 ### string
@@ -52,6 +72,8 @@ str.compare(res) < 0;
 s.substr(start, len);
 to_string(node->val)
 string('a', 10);
+
+reverse(s.begin() + index, s.begin() + i);
 
 s.find(str);
 s.replace(start, len, str);
@@ -71,6 +93,8 @@ s.top();
 s.pop();
 s.push(1);
 
+int t = s.top();
+
 stack<pair<int, int>> island;
 island.push({i, j});
 
@@ -82,6 +106,9 @@ island.pop();
 ### queue
 ```cpp
 queue<pair<int, int>> points;
+
+priority_queue<int, vector<int>, greater<int>> q;
+priority_queue<int> q(nums.begin(), nums.end());
 points.empty();
 points.size();
 points.push(make_pair(1, 2));
@@ -93,10 +120,29 @@ auto [r, c] = points.front();
 
 ### listnode
 ```cpp
+ListNode dummy(0);
+ListNode* tail = &dummy;
+
+
 ListNode* head = new ListNode(1);
 head->next = new ListNode(2);
 head != nullptr;
 node->val;
 node->left;
 node->right;
+
+auto it = find(v.begin(), v.end(), headB);
+if(it != v.end()) {
+  return headB;
+}
+```
+
+### 数学方法
+```cpp
+srand(time(nullptr));
+const int index = rand()%n;
+
+int l = INT_MAX;
+*max_element(f.begin(), f.end());
+
 ```
